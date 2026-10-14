@@ -298,7 +298,7 @@ export default function DashboardKeseluruhan() {
     else if (subjKey === 'bk') val = row.bk ?? row.BK ?? 0;
     else if (subjKey === 'koding') val = row.koding ?? row.KODING ?? row.Koding ?? 0;
     
-    const num = parseFloat(val);
+    const num = parseFloat(String(val));
     return isNaN(num) ? 0 : num;
   };
 
@@ -1087,7 +1087,7 @@ const cardVariants = {
                  initial={{ width: 0 }} 
                  animate={{ width: `${tuntasAllPercent}%` }} 
                  transition={{ duration: 1.2, type: "spring", bounce: 0.2 }}
-                 whileHover={{ scaleY: 1.3, brightness: 1.1 }}
+                 whileHover={{ scaleY: 1.3, filter: "brightness(1.1)" }}
                  onClick={() => setScoreModal({ type: 'tuntas', title: `Rincian Jumlah Siswa Tuntas (\u2265 KKM ${kkmValue})`, data: [] })}
                  className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full shadow-sm relative overflow-hidden cursor-pointer"
                >
@@ -1097,7 +1097,7 @@ const cardVariants = {
                  initial={{ width: 0 }} 
                  animate={{ width: `${persentaseZonaPerhatian}%` }} 
                  transition={{ duration: 1.2, type: "spring", bounce: 0.2, delay: 0.2 }}
-                 whileHover={{ scaleY: 1.3, brightness: 1.1 }}
+                 whileHover={{ scaleY: 1.3, filter: "brightness(1.1)" }}
                  onClick={() => setScoreModal({ type: 'remidi', title: `Rincian Jumlah Siswa Remedial (< KKM ${kkmValue})`, data: [] })}
                  className="h-full bg-gradient-to-r from-orange-400 to-rose-500 rounded-full shadow-sm cursor-pointer"
                />

@@ -314,13 +314,12 @@ const cardVariants = {
               </motion.div>
             ) : (
               <motion.div 
-                key="default"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                animate={{ y: [0, -2, 0] }}
-                transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-                className="bg-sky-100/80 backdrop-blur-sm text-sky-600 px-3 py-1.5 rounded-lg border border-sky-200/60 shadow-sm flex items-center gap-1.5"
-              >
+  key="default"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1, y: [0, -2, 0] }} // Gabungkan ke dalam satu atribut animate
+  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+  className="bg-sky-100/80 backdrop-blur-sm text-sky-600 px-3 py-1.5 rounded-lg border border-sky-200/60 shadow-sm flex items-center gap-1.5"
+>
                 <Sparkles size={11} className="text-sky-500 animate-spin" style={{ animationDuration: '6s' }} />
                 <span className="text-[10px] font-black uppercase tracking-widest">Live Mapel Hover</span>
               </motion.div>

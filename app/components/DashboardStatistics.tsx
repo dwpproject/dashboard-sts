@@ -186,14 +186,14 @@ export default function DashboardStatistics({ dashboardData, displaySettings }: 
     };
   }, [dashboardData]);
 
-  // Framer Motion Configurations
-  const containerVars = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.08 } } };
-  const itemVars = { hidden: { opacity: 0, y: 30, scale: 0.95 }, show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 350, damping: 25 } } };
-  
-  const floatAnim = { y: [-5, 5, -5], transition: { repeat: Infinity, duration: 4, ease: "easeInOut" } };
-  const pulseAnim = { scale: [1, 1.05, 1], transition: { repeat: Infinity, duration: 3, ease: "easeInOut" } };
-  const rotateAnim = { rotate: [0, 360], transition: { repeat: Infinity, duration: 30, ease: "linear" } };
-  const shimmerAnim = { x: ['-100%', '100%'], transition: { repeat: Infinity, duration: 2.5, ease: "linear" } };
+  // Ubah bagian ini di dalam DashboardStatistics.tsx
+const containerVars = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.08 } } } as any;
+const itemVars = { hidden: { opacity: 0, y: 30, scale: 0.95 }, show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 350, damping: 25 } } } as any;
+
+const floatAnim = { y: [-5, 5, -5], transition: { repeat: Infinity, duration: 4, ease: "easeInOut" } } as any;
+const pulseAnim = { scale: [1, 1.05, 1], transition: { repeat: Infinity, duration: 3, ease: "easeInOut" } } as any;
+const rotateAnim = { rotate: [0, 360], transition: { repeat: Infinity, duration: 30, ease: "linear" } } as any;
+const shimmerAnim = { x: ['-100%', '100%'], transition: { repeat: Infinity, duration: 2.5, ease: "linear" } } as any;
 
   const GlassCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
     <motion.div variants={itemVars} className={`relative overflow-hidden bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.06)] rounded-[2rem] p-5 lg:p-6 group ${className}`}>

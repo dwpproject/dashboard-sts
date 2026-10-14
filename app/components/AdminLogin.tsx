@@ -17,18 +17,15 @@ export default function AdminLogin({ isOpen, onClose, onLoginSuccess }: AdminLog
   const [errorAnim, setErrorAnim] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Validasi login admin (bisa disesuaikan)
-    if (username === 'admin' && username === 'admin123') {
-      // jika sukses
-    }
-    if (username === 'admin' && password === 'admin123') {
-      onLoginSuccess();
-    } else {
-      setErrorAnim(true);
-      setTimeout(() => setErrorAnim(false), 600);
-    }
-  };
+  e.preventDefault();
+  // Validasi login admin
+  if (username === 'admin' && password === 'admin123') {
+    onLoginSuccess();
+  } else {
+    setErrorAnim(true);
+    setTimeout(() => setErrorAnim(false), 600);
+  }
+};
 
   if (!isOpen) return null;
 

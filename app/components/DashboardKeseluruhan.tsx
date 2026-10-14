@@ -453,22 +453,22 @@ export default function DashboardKeseluruhan() {
   };
 
   const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.1 }
-    }
-  };
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 }
+  }
+} as any;
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: { type: "spring", stiffness: 280, damping: 22 }
-    }
-  };
+const cardVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  show: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { type: "spring", stiffness: 280, damping: 22 }
+  }
+} as any;
 
   const getDetailInfoObj = (key: string) => {
     if (key === 'kelas7') {

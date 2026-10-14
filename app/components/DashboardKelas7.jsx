@@ -256,14 +256,14 @@ export default function DashboardKelas7() {
 
   // --- ANIMATION VARIANTS ---
   const containerVariants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.08 } }
-  };
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.08 } }
+};
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 18, scale: 0.97 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 320, damping: 24 } }
-  };
+const cardVariants = {
+  hidden: { opacity: 0, y: 18, scale: 0.97 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 320, damping: 24 } }
+};
 
   // --- KOMPONEN CHART MAPEL ---
   const renderInteractiveMapelChart = (dataList) => {

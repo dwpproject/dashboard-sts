@@ -19,6 +19,7 @@ interface AdminPanelProps {
   setDisplaySettings: React.Dispatch<React.SetStateAction<any>>;
   dashboardData?: any; 
   setDashboardData?: React.Dispatch<React.SetStateAction<any>>;
+  isAuthenticated?: boolean;
 }
 
 const EXCEL_HEADERS = [
@@ -300,13 +301,20 @@ export default function AdminPanel({
     });
   }, [umpanBalikData, selectedRombel, searchTerm, activeMenu]);
 
-  const menuItems = [
-    { id: 'statistik', label: 'Statistik', icon: <PieChart size={14} /> },
-    { id: '7', label: `Kelas 7`, badge: localData['7']?.length || 0, icon: <School size={14} /> },
-    { id: '8', label: `Kelas 8`, badge: localData['8']?.length || 0, icon: <School size={14} /> },
-    { id: '9', label: `Kelas 9`, badge: localData['9']?.length || 0, icon: <School size={14} /> },
-    { id: 'umpan_balik', label: `Umpan Balik`, badge: umpanBalikData.length, icon: <MessageSquare size={14} /> }
-  ] as const;
+  interface MenuItem {
+  id: '7' | '8' | '9' | 'umpan_balik' | 'statistik';
+  label: string;
+  badge?: number;
+  icon: React.ReactNode;
+}
+
+const menuItems: MenuItem[] = [
+  { id: 'statistik', label: 'Statistik', icon: <PieChart size={14} /> },
+  { id: '7', label: `Kelas 7`, badge: localData['7']?.length || 0, icon: <School size={14} /> },
+  { id: '8', label: `Kelas 8`, badge: localData['8']?.length || 0, icon: <School size={14} /> },
+  { id: '9', label: `Kelas 9`, badge: localData['9']?.length || 0, icon: <School size={14} /> },
+  { id: 'umpan_balik', label: `Umpan Balik`, badge: umpanBalikData.length, icon: <MessageSquare size={14} /> }
+];
 
   return (
     <AnimatePresence>
